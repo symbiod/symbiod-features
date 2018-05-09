@@ -1,14 +1,23 @@
 # frozen_string_literal: true
 
 module Pages
-  # this page describe home page
-  class BootcampLanding
-    include PageObject
+  # this page describes bootcamp page
+  class BootcampLanding < BasePage
+    link :join_button, id: 'join-via-github'
 
-    a :join_button, id: 'join-via-github'
+    # TODO: move to navigation module
+    link :home, id: 'home'
+    link :bootcamp, id: 'bootcamp'
 
-    def has_text?(string)
-      text.include?(string)
+    def click_home_link
+      home
+      RootLanding.new(@browser)
     end
+
+    def click_bootcamp_link
+      bootcamp
+      BootcampLanding.new(@browser)
+    end
+
   end
 end

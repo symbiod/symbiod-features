@@ -6,9 +6,10 @@ Before do |scenario|
   DatabaseCleaner.clean
 
   @cucumber_host = ENV['CUCUMBER_HOST'] || default_host
-  browser_options = dev_env? ? [] : %w[--disable-gpu --headless --no-sandbox]
+  browser_options = headless? || !dev_env? ? %w[--disable-gpu --headless --no-sandbox] : []
 
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
+  @browser.window.resize_to(1200, 800)
 end
 
 After do |scenario|
@@ -18,7 +19,11 @@ After do |scenario|
 end
 
 def dev_env?
-  ENV['CUCUMBER_HOST'] && ENV['CUCUMBER_HOST'] != default_host
+  !ENV['CUCUMBER_HOST']
+end
+
+def headless?
+  !ENV['HEADLESS'].nil?
 end
 
 def default_host

@@ -5,3 +5,7 @@ Cucumber/Watir features for give-me-poc project
 * build app image
 * run docker-compose at features
 
+
+To run in headless mode use:
+
+`HEADLESS=true cucumber`
