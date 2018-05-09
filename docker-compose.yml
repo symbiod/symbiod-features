@@ -1,0 +1,58 @@
+version: '3'
+services:
+
+  mailhog:
+    image: mailhog/mailhog
+
+  postgres:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=poc_features
+
+  redis:
+    image: redis
+
+  app:
+    build:
+      image: registry.heroku.com/peaceful-refuge-95132/web
+    environment:
+      - RAILS_LOG_TO_STDOUT=true
+      - RAILS_ENV=features
+      - MAILHOG_HOST=mailhog
+      - RAILS_MASTER_KEY
+      - GITHUB_CLIENT_ID
+      - GITHUB_SECRET
+    depends_on:
+      - postgres
+      - redis
+      - mailhog
+    command: >
+      /bin/bash -c "
+        while ! nc -z postgres 5432;
+        do
+          echo Waiting for PG;
+          sleep 1;
+        done;
+        rake db:schema:load;
+        rm -f /app/tmp/pids/server.pid;
+        foreman start;
+      "
+
+  features:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+        - app
+    environment:
+      - CUCUMBER_HOST=http://app:3000
+    command: >
+      /bin/bash -c "
+        while ! nc -z app 3000;
+        do
+          echo Waiting for app;
+          sleep 1;
+        done;
+        cucumber;
+      "
