@@ -11,6 +11,8 @@ require 'selenium-webdriver'
 
 World(PageObject::PageFactory)
 
+require './features/support/pages/public'
+require './features/support/pages/public/header_navigation'
 Dir['./features/support/helpers/*.rb'].each { |file| require file }
 require './features/support/models/user'
 

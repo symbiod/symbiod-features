@@ -2,22 +2,15 @@
 
 module Pages
   # this page describes bootcamp page
+  # TODO: move this classes to Public namespace
   class BootcampLanding < BasePage
+    include Public::HeaderNavigation
+
     link :join_button, id: 'join-via-github'
 
-    # TODO: move to navigation module
-    link :home, id: 'home'
-    link :bootcamp, id: 'bootcamp'
-
-    def click_home_link
-      home
-      RootLanding.new(@browser)
+    def click_join_button
+      join_button
+      ::Pages::Public::GithubPage.new(@browser)
     end
-
-    def click_bootcamp_link
-      bootcamp
-      BootcampLanding.new(@browser)
-    end
-
   end
 end
