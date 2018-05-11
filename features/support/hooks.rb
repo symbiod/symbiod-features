@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 DatabaseCleaner.strategy = :truncation
+Faker::Config.locale = :en
 
 Before do |scenario|
   DatabaseCleaner.clean
@@ -10,6 +11,8 @@ Before do |scenario|
 
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
   @browser.window.resize_to(1200, 800)
+
+  FactoryBot.create(:test_task)
 end
 
 After do |scenario|
