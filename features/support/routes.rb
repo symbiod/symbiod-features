@@ -22,12 +22,12 @@ module Routes
         root_landing: {
           path: '/',
           subdomain: nil,
-          page_class: Pages::RootLanding
+          page_class: Pages::Public::RootLanding
         },
         bootcamp_landing: {
           path: '/',
           subdomain: 'bootcamp',
-          page_class: Pages::BootcampLanding
+          page_class: Pages::Public::BootcampLanding
         }
       }
     end
