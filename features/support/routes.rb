@@ -28,6 +28,16 @@ module Routes
           path: '/',
           subdomain: 'bootcamp',
           page_class: Pages::Public::BootcampLanding
+        },
+        dashboard_root: {
+          path: '/',
+          subdomain: 'dashboard',
+          page_class: Pages::Dashboard::RootPage
+        },
+        dashboard_applicants: {
+          path: '/test_task_assignments',
+          subdomain: 'dashboard',
+          page_class: Pages::Dashboard::ApplicantsPage
         }
       }
     end
