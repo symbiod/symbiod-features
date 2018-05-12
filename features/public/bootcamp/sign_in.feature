@@ -9,6 +9,8 @@ Feature: developer sign up
 		When sign in to github
 		And authorized through github
 		Then page has 'Prove your skills' text
+		When I submit screening form with 'http://cspub.net'
+		Then page has 'Congratulations' text
 		Then deauthorize github app
 
 	Scenario: user signs up with unpublished email

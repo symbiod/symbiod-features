@@ -16,7 +16,7 @@ module Pages
 
       def authorize_oauth
         authorize_oauth_button
-        Pages::Public::GithubPage.new(@browser)
+        Pages::Public::ScreeningPage.new(@browser)
       end
 
       def deauthorize_app

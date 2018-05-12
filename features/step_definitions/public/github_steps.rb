@@ -10,6 +10,7 @@ end
 
 Then('deauthorize github app') do
   goto('https://github.com/settings/applications')
+  @page = Pages::Public::GithubPage.new(@browser)
   @page = @page.deauthorize_app
   @page = @page.confirm_deauthorize_app
 end
