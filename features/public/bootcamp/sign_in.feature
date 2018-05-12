@@ -6,7 +6,7 @@ Feature: developer sign up
 		Given I am on bootcamp landing page
 		When click on 'join' button
 		Then page has 'Sign in to GitHub' text
-		When sign in to github
+		When sign in to github as 'public-email'
 		And authorized through github
 		Then page has 'Prove your skills' text
 		When I submit screening form with 'http://cspub.net'
@@ -15,6 +15,11 @@ Feature: developer sign up
 
 	Scenario: user signs up with unpublished email
 		Given I am on bootcamp landing page
-		#When click on 'join' button
-		#Then page has 'Sign in to GitHub' text
+		When click on 'join' button
+		Then page has 'Sign in to GitHub' text
+		When sign in to github as 'non-public-email'
+		And authorized through github
+		Then page has 'Upgrade your developer skills' text
+		Then page has 'Please fill your github profile according to our guidelines' text
+		Then deauthorize github app
 
