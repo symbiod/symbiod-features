@@ -7,6 +7,9 @@ rvm:
 services:
   - docker
 
+script:
+  - echo "Done"
+
 deploy:
   - provider: script
     script: bash bin/build-image
