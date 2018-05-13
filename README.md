@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/howtohireme/give-me-poc-features.svg?branch=master)](https://travis-ci.org/howtohireme/give-me-poc-features)
+
 # give-me-poc-features
 Cucumber/Watir features for give-me-poc project
 
