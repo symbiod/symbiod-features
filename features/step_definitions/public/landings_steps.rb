@@ -20,6 +20,10 @@ When('click on {string} link') do |link_name|
   @page = @page.send("click_#{link_name}_link")
 end
 
+Then('I confirm alert') do
+  @browser.alert.ok if @browser.alert.exists?
+end
+
 def full_landing_name(name)
   "#{name}_landing"
 end

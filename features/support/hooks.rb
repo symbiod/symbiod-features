@@ -2,12 +2,14 @@
 
 DatabaseCleaner.strategy = :truncation
 Faker::Config.locale = :en
+Watir.logger.level = :debug
+Watir.logger.output = 'artifacts/watir.log'
 
 Before do |scenario|
   DatabaseCleaner.clean
 
   @cucumber_host = ENV['CUCUMBER_HOST'] || default_host
-  browser_options = headless? || !dev_env? ? %w[--whitelisted-ips="" --enable-logging --verbose --log-level=1 --log-path=/app/chromedriver.log --disable-gpu --headless --no-sandbox] : []
+  browser_options = headless? || !dev_env? ? browser_capabilities : []
 
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
   @browser.window.resize_to(1200, 800)
@@ -16,9 +18,23 @@ Before do |scenario|
 end
 
 After do |scenario|
+  deauth_github(@browser) if scenario.failed?
   make_screenshot(@browser, scenario) if scenario.failed? && !dev_env?
   @browser.close
   DatabaseCleaner.clean
+end
+
+def browser_capabilities
+  %w[
+    --whitelisted-ips=""
+    --enable-logging
+    --verbose
+    --log-level=1
+    --log-path=/app/artifacts/chromedriver.log
+    --disable-gpu
+    --headless
+    --no-sandbox
+  ]
 end
 
 def dev_env?
@@ -34,8 +50,11 @@ def default_host
 end
 
 def make_screenshot(browser, scenario)
-  screenshot = "Screenshots/FAILED_#{scenario.name.tr(' ', '_').gsub(/[^0-9A-Za-z_]/, '')}.png"
-  browser.driver.save_screenshot(screenshot)
-  encoded_img = browser.driver.screenshot_as(:base64)
-  embed("data:image/png;base64,#{encoded_img}", 'image/png')
+  Screenshoter.new(browser, scenario.name).call
+end
+
+def deauth_github(browser)
+  goto('https://github.com/settings/applications')
+  page = Pages::Public::GithubPage.new(browser)
+  page = page.deauthorize_app
 end

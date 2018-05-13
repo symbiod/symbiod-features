@@ -5,7 +5,6 @@ Feature: developer sign up
 	Scenario: signs in through github and passes screening
 		Given I am on bootcamp landing page
 		When click on 'join' button
-		Then page has 'Sign in to GitHub' text
 		When sign in to github as 'public-email'
 		And authorized through github
 		Then page has 'Prove your skills' text
@@ -16,7 +15,6 @@ Feature: developer sign up
 	Scenario: user signs up with unpublished email
 		Given I am on bootcamp landing page
 		When click on 'join' button
-		Then page has 'Sign in to GitHub' text
 		When sign in to github as 'non-public-email'
 		And authorized through github
 		Then page has 'Upgrade your developer skills' text

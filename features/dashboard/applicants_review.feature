@@ -28,6 +28,7 @@ Feature: staff can review developer applications
     When I open developer profile
     Then I can see 'reject' button
     When I click 'reject' button
+    Then I confirm alert
     Then I see no applied user
     And user has 'rejected' state
     Then deauthorize github app

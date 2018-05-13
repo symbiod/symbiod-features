@@ -3,7 +3,6 @@
 module Pages
   module Public
     # this page describes bootcamp page
-    # TODO: move this classes to Public namespace
     class BootcampLanding < BasePage
       include Public::HeaderNavigation
 

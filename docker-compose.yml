@@ -28,6 +28,7 @@ services:
       - RAILS_MASTER_KEY
       - GITHUB_CLIENT_ID
       - GITHUB_SECRET
+      - GITHUB_CALLBACK_DOMAIN=http://bootcamp.app.com:3000
       - DATABASE_HOST=postgres
       - REDIS_URL=redis://redis:6379
     depends_on:
@@ -68,6 +69,8 @@ services:
       - GITHUB_NON_PUBLIC_PASSWORD
     networks:
       - test_network
+    volumes:
+      - ./artifacts:/app/artifacts
     command: >
       /bin/bash -c "
         while ! nc -z www.app.com 3000;
@@ -76,7 +79,6 @@ services:
           sleep 1;
         done;
         cucumber;
-        cat /app/chromedriver.log;
       "
 
 networks:
