@@ -7,7 +7,7 @@ Before do |scenario|
   DatabaseCleaner.clean
 
   @cucumber_host = ENV['CUCUMBER_HOST'] || default_host
-  browser_options = headless? || !dev_env? ? %w[--disable-gpu --headless --no-sandbox] : []
+  browser_options = headless? || !dev_env? ? %w[--whitelisted-ips="" --enable-logging --verbose --log-level=1 --log-path=/app/chromedriver.log --disable-gpu --headless --no-sandbox] : []
 
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
   @browser.window.resize_to(1200, 800)

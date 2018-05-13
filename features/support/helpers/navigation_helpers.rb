@@ -10,7 +10,10 @@ module NavigationHelpers
     path = Routes::Mapper.path_for(page_name)
     subdomain = Routes::Mapper.subdomain_for(page_name)
     subdomain = subdomain + "." if subdomain
-    domain = @cucumber_host.gsub(/^http:\/\//, '').gsub(/\/\w+/, '')
+    domain = @cucumber_host
+      .gsub(/^http:\/\//, '') # remove http:// from url
+      .gsub(/\/\w+/, '') # remove path and params
+      .gsub('www.', '') # remove www
 
     "http://#{subdomain}#{domain}#{path}"
   end

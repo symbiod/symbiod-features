@@ -3,19 +3,24 @@ services:
 
   mailhog:
     image: mailhog/mailhog
+    networks:
+      - test_network
 
   postgres:
     image: postgres:9.5
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=poc_features
+    networks:
+      - test_network
 
   redis:
     image: redis
+    networks:
+      - test_network
 
   app:
-    build:
-      image: registry.heroku.com/peaceful-refuge-95132/web
+    image: registry.heroku.com/peaceful-refuge-95132/web
     environment:
       - RAILS_LOG_TO_STDOUT=true
       - RAILS_ENV=features
@@ -23,10 +28,19 @@ services:
       - RAILS_MASTER_KEY
       - GITHUB_CLIENT_ID
       - GITHUB_SECRET
+      - DATABASE_HOST=postgres
+      - REDIS_URL=redis://redis:6379
     depends_on:
       - postgres
       - redis
       - mailhog
+    networks:
+      test_network:
+        aliases:
+          - app.com
+          - www.app.com
+          - bootcamp.app.com
+          - dashboard.app.com
     command: >
       /bin/bash -c "
         while ! nc -z postgres 5432;
@@ -46,13 +60,25 @@ services:
     depends_on:
         - app
     environment:
-      - CUCUMBER_HOST=http://app:3000
+      - CUCUMBER_HOST=http://www.app.com:3000
+      - POSTGRES_HOST=postgres
+      - GITHUB_TEST_EMAIL
+      - GITHUB_TEST_PASSWORD
+      - GITHUB_NON_PUBLIC_EMAIL
+      - GITHUB_NON_PUBLIC_PASSWORD
+    networks:
+      - test_network
     command: >
       /bin/bash -c "
-        while ! nc -z app 3000;
+        while ! nc -z www.app.com 3000;
         do
           echo Waiting for app;
           sleep 1;
         done;
         cucumber;
+        cat /app/chromedriver.log;
       "
+
+networks:
+  test_network:
+    driver: bridge
