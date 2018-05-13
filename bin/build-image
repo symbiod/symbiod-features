@@ -1,3 +1,3 @@
 docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-docker build -t howtohireme/givemepoc-features -f Dockerfile .
-docker push howtohireme/givemepoc-features
+docker build -t howtohireme/give-me-poc-features -f Dockerfile .
+docker push howtohireme/give-me-poc-features
