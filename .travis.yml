@@ -12,7 +12,7 @@ services:
   - docker
 
 script:
-  - bin/build
+  - bin/build-image
 
 deploy:
   - provider: script
