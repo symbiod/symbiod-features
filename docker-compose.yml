@@ -55,9 +55,7 @@ services:
       "
 
   features:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    images: howtohireme/give-me-poc-features
     depends_on:
         - app
     environment:
