@@ -55,7 +55,7 @@ services:
       "
 
   features:
-    images: howtohireme/give-me-poc-features
+    image: howtohireme/give-me-poc-features
     depends_on:
         - app
     environment:
