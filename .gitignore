@@ -50,3 +50,4 @@ build-iPhoneSimulator/
 .rvmrc
 .envrc
 artifacts/**/*
+features/support/database.yml
