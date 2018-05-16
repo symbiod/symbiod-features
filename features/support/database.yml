@@ -8,6 +8,6 @@ features:
   <<: *default
   host: <%= ENV.fetch("POSTGRES_HOST") { 'localhost' } %>
   user: <%= ENV.fetch("POSTGRES_USER") { 'postgres' } %>
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") { 'root' } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { '1' } %>
   database: <%= ENV.fetch("POSTGRES_DB") { 'poc_features' } %>
 

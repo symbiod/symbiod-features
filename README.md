@@ -14,8 +14,23 @@ Cucumber/Watir features for give-me-poc project
 
 To run natively on dev machine:
 
-* Go to `give-me-poc` project dir and run `RAILS_ENV=features rails server`
-* Go to `give-me-poc-features` and run `cucumber`
+1. Clone repository
+
+2. Create folder `give-me-poc-features/artifacts`
+
+3. Configure the connection to the database `give-me-poc-features/features/support/database.yml`
+
+4. `bundle`
+
+5. Environment variables
+
+6. [Install Chrome and chromedriver](https://gist.github.com/ziadoz/3e8ab7e944d02fe872c3454d17af31a5)
+
+7. Go to `give-me-poc` project dir and run
+`RAILS_ENV=features rake assets:precompile`
+`RAILS_ENV=features rails server`
+
+8. Go to `give-me-poc-features` and run `cucumber`
 
 To run features in headless mode(without real browser window) use:
 
