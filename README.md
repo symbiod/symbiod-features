@@ -14,11 +14,13 @@ Cucumber/Watir features for give-me-poc project
 
 To run natively on dev machine:
 
-1. Clone repository
+1. Clone repository and go to `give-me-poc-features`
 
-2. Create folder `give-me-poc-features/artifacts`
+2. Create folder artifacts
+`mkdir artifacts`
 
-3. Configure the connection to the database `give-me-poc-features/features/support/database.yml`
+3. Configure the connection to the database `features/support/database.yml.sample`
+`cp features/support/database.yml.sample features/support/database.yml`
 
 4. `bundle`
 
