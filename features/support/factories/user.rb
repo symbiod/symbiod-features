@@ -3,6 +3,11 @@
 FactoryBot.define do
   factory :user, class: Models::User do
     email { Faker::Internet.email }
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    location { Faker::Address.country }
+    timezone { Faker::Address.time_zone }
+    cv_url { Faker::Internet.url }
 
     trait :screening_completed do
       state 'screening_completed'

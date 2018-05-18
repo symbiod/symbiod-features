@@ -7,6 +7,8 @@ Feature: developer sign up
 		When click on 'join' button
 		When sign in to github as 'public-email'
 		And authorized through github
+		Then page has 'Fill your developer profile' text
+		When I submit filled profile
 		Then page has 'Prove your skills' text
 		When I submit screening form with 'http://cspub.net'
 		Then page has 'Congratulations' text
