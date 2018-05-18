@@ -43,6 +43,10 @@ module Routes
           path: '/sessions/new',
           subdomain: 'idea',
           page_class: Pages::Idea::SignInPage
+        dashboard_test_tasks: {
+          path: '/test_tasks',
+          subdomain: 'dashboard',
+          page_class: Pages::Dashboard::TestTasksPage
         }
       }
     end

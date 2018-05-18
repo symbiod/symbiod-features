@@ -1,0 +1,88 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ApplicantsPage	features/support/pages/dashboard/applicants_page.rb	/^    class ApplicantsPage < BasePage$/;"	c	class:Pages.Dashboard
+BasePage	features/support/pages/base_page.rb	/^  class BasePage$/;"	c	class:Pages
+BootcampLanding	features/support/pages/public/bootcamp_landing.rb	/^    class BootcampLanding < BasePage$/;"	c	class:Pages.Public
+Dashboard	features/support/pages/dashboard/applicants_page.rb	/^  module Dashboard$/;"	m	class:Pages
+Dashboard	features/support/pages/dashboard/root_page.rb	/^  module Dashboard$/;"	m	class:Pages
+Dashboard	features/support/pages/dashboard/sidebar_navigation.rb	/^  module Dashboard$/;"	m	class:Pages
+Dashboard	features/support/pages/dashboard/test_tasks_page.rb	/^  module Dashboard$/;"	m	class:Pages
+GithubPage	features/support/pages/public/github_page.rb	/^    class GithubPage < BasePage$/;"	c	class:Pages.Public
+HeaderNavigation	features/support/pages/public/header_navigation.rb	/^    module HeaderNavigation$/;"	m	class:Pages.Public
+Mapper	features/support/routes.rb	/^  class Mapper$/;"	c	class:Routes
+Models	features/support/models/role.rb	/^module Models$/;"	m
+Models	features/support/models/test_task.rb	/^module Models$/;"	m
+Models	features/support/models/test_task_assignment.rb	/^module Models$/;"	m
+Models	features/support/models/test_task_result.rb	/^module Models$/;"	m
+Models	features/support/models/user.rb	/^module Models$/;"	m
+Models	features/support/models/user_role.rb	/^module Models$/;"	m
+NavigationHelpers	features/support/helpers/navigation_helpers.rb	/^module NavigationHelpers$/;"	m
+Pages	features/support/pages/base_page.rb	/^module Pages$/;"	m
+Pages	features/support/pages/dashboard/applicants_page.rb	/^module Pages$/;"	m
+Pages	features/support/pages/dashboard/root_page.rb	/^module Pages$/;"	m
+Pages	features/support/pages/dashboard/sidebar_navigation.rb	/^module Pages$/;"	m
+Pages	features/support/pages/dashboard/test_tasks_page.rb	/^module Pages$/;"	m
+Pages	features/support/pages/public.rb	/^module Pages$/;"	m
+Pages	features/support/pages/public/bootcamp_landing.rb	/^module Pages$/;"	m
+Pages	features/support/pages/public/github_page.rb	/^module Pages$/;"	m
+Pages	features/support/pages/public/header_navigation.rb	/^module Pages$/;"	m
+Pages	features/support/pages/public/root_landing.rb	/^module Pages$/;"	m
+Pages	features/support/pages/public/screening_page.rb	/^module Pages$/;"	m
+Public	features/support/pages/public.rb	/^  module Public$/;"	m	class:Pages
+Public	features/support/pages/public/bootcamp_landing.rb	/^  module Public$/;"	m	class:Pages
+Public	features/support/pages/public/github_page.rb	/^  module Public$/;"	m	class:Pages
+Public	features/support/pages/public/header_navigation.rb	/^  module Public$/;"	m	class:Pages
+Public	features/support/pages/public/root_landing.rb	/^  module Public$/;"	m	class:Pages
+Public	features/support/pages/public/screening_page.rb	/^  module Public$/;"	m	class:Pages
+Role	features/support/models/role.rb	/^  class Role < ActiveRecord::Base; end$/;"	c	class:Models
+RootLanding	features/support/pages/public/root_landing.rb	/^    class RootLanding < BasePage$/;"	c	class:Pages.Public
+RootPage	features/support/pages/dashboard/root_page.rb	/^    class RootPage < BasePage$/;"	c	class:Pages.Dashboard
+Routes	features/support/routes.rb	/^module Routes$/;"	m
+ScreeningPage	features/support/pages/public/screening_page.rb	/^    class ScreeningPage < BasePage$/;"	c	class:Pages.Public
+Screenshoter	features/support/helpers/screenshoter.rb	/^class Screenshoter$/;"	c
+SidebarNavigation	features/support/pages/dashboard/sidebar_navigation.rb	/^    module SidebarNavigation$/;"	m	class:Pages.Dashboard
+TestTask	features/support/models/test_task.rb	/^  class TestTask < ActiveRecord::Base$/;"	c	class:Models
+TestTaskAssignment	features/support/models/test_task_assignment.rb	/^  class TestTaskAssignment < ActiveRecord::Base$/;"	c	class:Models
+TestTaskResult	features/support/models/test_task_result.rb	/^  class TestTaskResult < ActiveRecord::Base$/;"	c	class:Models
+TestTasksPage	features/support/pages/dashboard/test_tasks_page.rb	/^    class TestTasksPage < BasePage$/;"	c	class:Pages.Dashboard
+User	features/support/models/user.rb	/^  class User < ActiveRecord::Base; end$/;"	c	class:Models
+UserRole	features/support/models/user_role.rb	/^  class UserRole < ActiveRecord::Base$/;"	c	class:Models
+authorize_oauth	features/support/pages/public/github_page.rb	/^      def authorize_oauth$/;"	f	class:Pages.Public.GithubPage
+browser_capabilities	features/support/hooks.rb	/^def browser_capabilities$/;"	f
+call	features/support/helpers/screenshoter.rb	/^  def call$/;"	f	class:Screenshoter
+click_activate_button	features/support/pages/dashboard/applicants_page.rb	/^      def click_activate_button$/;"	f	class:Pages.Dashboard.ApplicantsPage
+click_bootcamp_link	features/support/pages/public/header_navigation.rb	/^      def click_bootcamp_link$/;"	f	class:Pages.Public.HeaderNavigation
+click_developer_button	features/support/pages/public/root_landing.rb	/^      def click_developer_button$/;"	f	class:Pages.Public.RootLanding
+click_home_link	features/support/pages/public/header_navigation.rb	/^      def click_home_link$/;"	f	class:Pages.Public.HeaderNavigation
+click_join_button	features/support/pages/public/bootcamp_landing.rb	/^      def click_join_button$/;"	f	class:Pages.Public.BootcampLanding
+click_reject_button	features/support/pages/dashboard/applicants_page.rb	/^      def click_reject_button$/;"	f	class:Pages.Dashboard.ApplicantsPage
+click_signin_button	features/support/pages/public/github_page.rb	/^      def click_signin_button$/;"	f	class:Pages.Public.GithubPage
+confirm_deauthorize_app	features/support/pages/public/github_page.rb	/^      def confirm_deauthorize_app$/;"	f	class:Pages.Public.GithubPage
+deauth_github	features/support/hooks.rb	/^def deauth_github(browser)$/;"	f
+deauthorize_app	features/support/pages/public/github_page.rb	/^      def deauthorize_app$/;"	f	class:Pages.Public.GithubPage
+default_host	features/support/hooks.rb	/^def default_host$/;"	f
+dev_env?	features/support/hooks.rb	/^def dev_env?$/;"	f
+full_landing_name	features/step_definitions/public/landings_steps.rb	/^def full_landing_name(name)$/;"	f
+github_credentials_for	features/step_definitions/public/github_steps.rb	/^def github_credentials_for(account_kind)$/;"	f
+goto	features/support/helpers/navigation_helpers.rb	/^  def goto(url)$/;"	f	class:NavigationHelpers
+goto_applicants	features/support/pages/dashboard/sidebar_navigation.rb	/^      def goto_applicants$/;"	f	class:Pages.Dashboard.SidebarNavigation
+goto_test_tasks	features/support/pages/dashboard/sidebar_navigation.rb	/^      def goto_test_tasks$/;"	f	class:Pages.Dashboard.SidebarNavigation
+has_text?	features/support/pages/base_page.rb	/^    def has_text?(string)$/;"	f	class:Pages.BasePage
+headless?	features/support/hooks.rb	/^def headless?$/;"	f
+initialize	features/support/helpers/screenshoter.rb	/^  def initialize(browser, name=nil)$/;"	f	class:Screenshoter
+make_screenshot	features/support/hooks.rb	/^def make_screenshot(browser, scenario)$/;"	f
+mapping	features/support/routes.rb	/^    def self.mapping$/;"	F	class:Routes.Mapper
+open_first_applied_developer_profile	features/support/pages/dashboard/applicants_page.rb	/^      def open_first_applied_developer_profile$/;"	f	class:Pages.Dashboard.ApplicantsPage
+open_first_test_task_profile	features/support/pages/dashboard/test_tasks_page.rb	/^      def open_first_test_task_profile$/;"	f	class:Pages.Dashboard.TestTasksPage
+page_class_for	features/support/routes.rb	/^    def self.page_class_for(route_name)$/;"	F	class:Routes.Mapper
+page_for	features/support/helpers/navigation_helpers.rb	/^  def page_for(page_name)$/;"	f	class:NavigationHelpers
+path_for	features/support/routes.rb	/^    def self.path_for(route_name)$/;"	F	class:Routes.Mapper
+screenshot_file_name	features/support/helpers/screenshoter.rb	/^  def screenshot_file_name$/;"	f	class:Screenshoter
+screenshots_dir	features/support/helpers/screenshoter.rb	/^  def screenshots_dir$/;"	f	class:Screenshoter
+subdomain_for	features/support/routes.rb	/^    def self.subdomain_for(route_name)$/;"	F	class:Routes.Mapper
+submit_screening_result	features/support/pages/public/screening_page.rb	/^      def submit_screening_result(link)$/;"	f	class:Pages.Public.ScreeningPage
+url_for	features/support/helpers/navigation_helpers.rb	/^  def url_for(page_name)$/;"	f	class:NavigationHelpers
