@@ -5,7 +5,7 @@ FactoryBot.define do
     user_id { Models::User.last.id }
 
     trait :staff do
-      role_id { Models::Role.where(name: 'stuff').last.id }
+      role_id { Models::Role.where(name: 'staff').last.id }
     end
   end
 end

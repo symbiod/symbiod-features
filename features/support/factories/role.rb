@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :role, class: Models::Role do
     trait :staff do
-      name 'stuff'
+      name 'staff'
     end
   end
 end
