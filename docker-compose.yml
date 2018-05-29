@@ -22,7 +22,8 @@ services:
   app:
     image: registry.heroku.com/peaceful-refuge-95132/web
     environment:
-      - RAILS_LOG_TO_STDOUT=true
+      # NOTICE: uncomment this if you need to display logs for debugging
+      #- RAILS_LOG_TO_STDOUT=true
       - RAILS_ENV=features
       - MAILHOG_HOST=mailhog
       - RAILS_MASTER_KEY
