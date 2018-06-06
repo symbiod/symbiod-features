@@ -1,3 +1,5 @@
 module Models
-  class Role < ActiveRecord::Base; end
+  class Role < ActiveRecord::Base
+    has_many :user_roles
+  end
 end

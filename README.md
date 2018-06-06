@@ -38,6 +38,8 @@ To run features in headless mode(without real browser window) use:
 
 `HEADLESS=true cucumber`
 
+If you need to debug some feature, use `DEBUG=true cucumber`, it will run PRY session on the first failure.
+
 ## Dockerized run
 
 * Go to `give-me-poc` project dir and run `bin/build`

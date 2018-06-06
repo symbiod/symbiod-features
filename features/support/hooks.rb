@@ -18,6 +18,7 @@ Before do |scenario|
 end
 
 After do |scenario|
+  debug! if scenario.failed? && debug?
   deauth_github(@browser) if scenario.failed?
   make_screenshot(@browser, scenario) if scenario.failed? && !dev_env?
   @browser.close
@@ -43,6 +44,14 @@ end
 
 def headless?
   !ENV['HEADLESS'].nil?
+end
+
+def debug?
+  ENV['DEBUG']
+end
+
+def debug!
+  binding.pry
 end
 
 def default_host

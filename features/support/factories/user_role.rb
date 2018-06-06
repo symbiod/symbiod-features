@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :user_role, class: Models::UserRole do
-    user_id { Models::User.last.id }
+    user
 
     trait :staff do
-      role_id { Models::Role.where(name: 'staff').last.id }
+      role { create(:role, :staff) }
     end
   end
 end
