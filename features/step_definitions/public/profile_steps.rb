@@ -7,3 +7,7 @@ When('I submit filled profile') do
     cv_url_field: 'https://github.com'
   })
 end
+
+When('I accept the policy') do
+  @page = @page.submit_accepted_policy
+end

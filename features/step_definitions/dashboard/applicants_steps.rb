@@ -4,6 +4,10 @@ end
 
 Then('I can see developer in table') do
   @page = @page.goto_applicants
+  # TODO: we have some race condition here
+  # for some reasons watir can find the required element
+  puts @page.has_text?(@applicant.email)
+  #Watir::Wait.until { @browser.td(value: @applicant.email).visible? }
   expect(@page.has_text?(@applicant.email)).to eq true
 end
 
@@ -28,5 +32,5 @@ Then('I see no applied user') do
 end
 
 And('user has {string} state') do |state|
-  expect(Models::User.last.state).to eq state
+  expect(@applicant.reload.state).to eq state
 end

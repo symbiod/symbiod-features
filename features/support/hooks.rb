@@ -14,7 +14,7 @@ Before do |scenario|
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
   @browser.window.resize_to(1200, 800)
 
-  FactoryBot.create(:test_task)
+  FactoryBot.create(:test_task, :developer)
 end
 
 After do |scenario|
@@ -63,6 +63,7 @@ def make_screenshot(browser, scenario)
 end
 
 def deauth_github(browser)
+  puts "Deauth github on failure"
   goto('https://github.com/settings/applications')
   page = Pages::Public::GithubPage.new(browser)
   page = page.deauthorize_app

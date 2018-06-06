@@ -5,5 +5,9 @@ FactoryBot.define do
     position { %w[1 2].sample }
     title { Faker::Dune.title }
     description { Faker::VForVendetta.speech }
+
+    trait :developer do
+      role_id { Models::Role.find_or_create_by(name: 'developer').id }
+    end
   end
 end
