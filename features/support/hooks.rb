@@ -14,7 +14,7 @@ Before do |scenario|
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
   @browser.window.resize_to(1200, 800)
 
-  FactoryBot.create(:test_task, :developer)
+  FactoryBot.create(:test_task, :developer, :active)
 end
 
 After do |scenario|
