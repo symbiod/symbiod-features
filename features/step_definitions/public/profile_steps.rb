@@ -11,3 +11,7 @@ end
 When('I accept the policy') do
   @page = @page.submit_accepted_policy
 end
+
+Given('system has skills') do
+  FactoryBot.create(:skill)
+end
