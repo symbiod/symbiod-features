@@ -13,8 +13,6 @@ Before do |scenario|
 
   @browser = Watir::Browser.new(:chrome, switches: browser_options)
   @browser.window.resize_to(1200, 800)
-
-  FactoryBot.create(:test_task, :developer, :active)
 end
 
 After do |scenario|
@@ -31,7 +29,7 @@ def browser_capabilities
     --enable-logging
     --verbose
     --log-level=1
-    --log-path=/app/artifacts/chromedriver.log
+    --log-path=/tmp/chromedriver.log
     --disable-gpu
     --headless
     --no-sandbox

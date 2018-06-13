@@ -5,6 +5,7 @@ FactoryBot.define do
     position { %w[1 2].sample }
     title { Faker::Dune.title }
     description { Faker::VForVendetta.speech }
+    skill
 
     trait :active do
       state 'active'
