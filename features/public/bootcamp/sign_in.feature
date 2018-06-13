@@ -5,6 +5,7 @@ Feature: developer sign up
   Scenario: signs in through github and passes screening
     Given I am on bootcamp landing page
     Given system has skills
+    Given system has test tasks
     When click on 'join' button
     When sign in to github as 'public-email'
     And authorized through github

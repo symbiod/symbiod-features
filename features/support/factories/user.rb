@@ -15,7 +15,7 @@ FactoryBot.define do
       after(:create) do |u|
         result = FactoryBot.create(:test_task_result)
         FactoryBot.create(:test_task_assignment,
-                          test_task_id: Models::TestTask.last.id,
+                          test_task_id: FactoryBot.create(:test_task).id,
                           test_task_result_id: result.id,
                           developer_id: u.id
                          )
