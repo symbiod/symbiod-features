@@ -3,7 +3,7 @@ Given('I have staff role') do
   FactoryBot.create(:user_role, :staff, user: @current_user)
 end
 
-Then('I access dashboard') do
+Then('I can access dashboard') do
   goto(url_for(:dashboard_root))
   @page = Pages::Dashboard::RootPage.new(@browser)
   expect(@page.has_text?('Dashboard')).to eq true

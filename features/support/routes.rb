@@ -38,6 +38,11 @@ module Routes
           path: '/test_task_assignments',
           subdomain: 'dashboard',
           page_class: Pages::Dashboard::ApplicantsPage
+        },
+        idea_sign_in: {
+          path: '/sessions/new',
+          subdomain: 'idea',
+          page_class: Pages::Idea::SignInPage
         }
       }
     end

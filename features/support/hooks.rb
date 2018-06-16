@@ -17,7 +17,7 @@ end
 
 After do |scenario|
   debug! if scenario.failed? && debug?
-  deauth_github(@browser) if scenario.failed?
+  #deauth_github(@browser) if scenario.failed?
   make_screenshot(@browser, scenario) if scenario.failed? && !dev_env?
   @browser.close
   DatabaseCleaner.clean
