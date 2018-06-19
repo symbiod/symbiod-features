@@ -1,10 +1,10 @@
 #!/bin/bash
 
-docker rm give-me-poc-features_features_1
-docker rmi give-me-poc-features_features
+docker rm features_1
+docker rmi howtohireme/give-me-poc-features
 
 docker-compose up --abort-on-container-exit
 exit_status=$?
 
-docker logs give-me-poc-features_features_1
+docker logs features_1
 exit $exit_status
