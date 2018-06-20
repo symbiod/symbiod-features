@@ -57,6 +57,7 @@ services:
 
   features:
     image: howtohireme/give-me-poc-features
+    container_name: features_1
     depends_on:
         - app
     environment:
