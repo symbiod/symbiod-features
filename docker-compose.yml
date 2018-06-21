@@ -43,6 +43,7 @@ services:
           - www.app.com
           - bootcamp.app.com
           - dashboard.app.com
+          - idea.app.com
     command: >
       /bin/bash -c "
         while ! nc -z postgres 5432;
