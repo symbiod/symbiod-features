@@ -17,7 +17,7 @@ end
 
 After do |scenario|
   debug! if scenario.failed? && debug?
-  deauth_github(@browser) if scenario.failed?
+  deauth_github(@browser) if scenario.failed? && requires_github_cleanup?(scenario)
   make_screenshot(@browser, scenario) if scenario.failed? && !dev_env?
   @browser.close
   DatabaseCleaner.clean
@@ -60,9 +60,13 @@ def make_screenshot(browser, scenario)
   Screenshoter.new(browser, scenario.name).call
 end
 
+def requires_github_cleanup?(scenario)
+  scenario.source_tag_names.include?('@github-interaction')
+end
+
 def deauth_github(browser)
-  puts "Deauth github on failure"
   goto('https://github.com/settings/applications')
   page = Pages::Public::GithubPage.new(browser)
   page = page.deauthorize_app
+  page = page.confirm_deauthorize_app
 end

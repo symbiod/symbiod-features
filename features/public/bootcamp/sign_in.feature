@@ -2,6 +2,7 @@ Feature: developer sign up
   Checks if the oauth process works correctly
   Also involves completing of screening
 
+  @github-interaction
   Scenario: signs in through github and passes screening
     Given I am on bootcamp landing page
     Given system has skills

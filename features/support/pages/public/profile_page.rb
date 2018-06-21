@@ -1,12 +1,12 @@
 module Pages
   module Public
     class ProfilePage < BasePage
-      text_field :first_name_field, id: 'user_first_name'
-      text_field :last_name_field, id: 'user_last_name'
-      text_field :location_field, id: 'user_location'
-      select_list :timezone_field, id: 'user_timezone'
-      text_field :cv_url_field, id: 'user_cv_url'
-      button :submit_profile, value: 'Submit'
+      text_field :first_name_field, id: 'developer_wizard_profile_first_name'
+      text_field :last_name_field,  id: 'developer_wizard_profile_last_name'
+      text_field :location_field,   id: 'developer_wizard_profile_location'
+      select_list :timezone_field,  id: 'developer_wizard_profile_timezone'
+      text_field :cv_url_field,     id: 'developer_wizard_profile_cv_url'
+      button :submit_profile,       value: 'Submit'
 
       def fill_and_submit_form(attributes)
         raise 'Empty profile form attributes' if attributes.empty?
