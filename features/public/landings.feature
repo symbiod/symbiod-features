@@ -4,7 +4,7 @@ Feature: landings landing
     From root landing to bootcamp landing
 
     Given I am on root landing page
-    Then page has 'The great oppurtunities' text
+    Then page has '!The great oppurtunities' text
     And page has 'developer' button
 
     When click on 'developer' button
