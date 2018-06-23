@@ -1,3 +1,6 @@
+#!/bin/bash
+
 docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-docker build -t howtohireme/give-me-poc-features -f Dockerfile .
-docker push howtohireme/give-me-poc-features
+# TODO: mark all images by branch name
+docker build -t howtohireme/give-me-poc-features:$TRAVIS_BRANCH -f Dockerfile .
+docker push howtohireme/give-me-poc-features:$TRAVIS_BRANCH
