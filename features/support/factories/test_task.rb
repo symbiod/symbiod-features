@@ -12,7 +12,7 @@ FactoryBot.define do
     end
 
     trait :developer do
-      role_id { Models::Role.find_or_create_by(name: 'developer').id }
+      role_name { Models::Role.find_or_create_by(name: 'developer').name }
     end
   end
 end
