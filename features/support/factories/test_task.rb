@@ -11,6 +11,10 @@ FactoryBot.define do
       state 'active'
     end
 
+    trait :disabled do
+      state 'disabled'
+    end
+
     trait :developer do
       role_name { Models::Role.find_or_create_by(name: 'developer').name }
     end
