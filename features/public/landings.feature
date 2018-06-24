@@ -12,7 +12,7 @@ Feature: landings landing
     And page has 'join' button
 
     When click on 'home' link
-    Then page has 'The great oppurtunities' text
+    Then page has 'lol kek' text
 
     When click on 'bootcamp' link
     Then page has 'Upgrade your developer skills' text
