@@ -1,10 +1,20 @@
 #!/bin/bash
 
-docker rm features_1
-docker rmi howtohireme/give-me-poc-features
+if [[ "$TRAVIS_EVENT_TYPE" == "push" ]]; then
+	CURRENT_TAG=$TRAVIS_BRANCH 
 
-docker-compose up --abort-on-container-exit
-exit_status=$?
+	if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+    CURRENT_TAG="latest"
+	fi
 
-docker logs features_1
-exit $exit_status
+	docker rm features_1
+	docker rmi howtohireme/give-me-poc-features
+
+	docker-compose up --abort-on-container-exit
+	exit_status=$?
+
+	docker logs features_1
+	exit $exit_status
+else
+	echo "Skip build for PR event"
+fi
