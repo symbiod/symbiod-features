@@ -2,6 +2,7 @@
 
 # We don't want to build an image for PR builds
 if [[ "$TRAVIS_EVENT_TYPE" == "push" ]]; then
+	echo "Features build was triggered by $TRAVIS_EVENT_TYPE"
 	docker rm features_1
 	docker rmi howtohireme/give-me-poc-features
 
