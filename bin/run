@@ -1,16 +1,11 @@
 #!/bin/bash
 
-# We don't want to build an image for PR builds
-if [[ "$TRAVIS_EVENT_TYPE" == "push" ]]; then
-	echo "Features build was triggered by $TRAVIS_EVENT_TYPE"
-	docker rm features_1
-	docker rmi howtohireme/give-me-poc-features
+echo "Features build was triggered by $TRAVIS_EVENT_TYPE"
+docker rm features_1
+docker rmi howtohireme/give-me-poc-features
 
-	docker-compose up --abort-on-container-exit
-	exit_status=$?
+docker-compose up --abort-on-container-exit
+exit_status=$?
 
-	docker logs features_1
-	exit $exit_status
-else
-	echo "Skip build for PR event"
-fi
+docker logs features_1
+exit $exit_status
