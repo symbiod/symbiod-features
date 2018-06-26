@@ -1,3 +1,15 @@
-docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-docker build -t howtohireme/give-me-poc-features -f Dockerfile .
-docker push howtohireme/give-me-poc-features
+#!/bin/bash
+
+if [[ "$TRAVIS_EVENT_TYPE" == "push" ]]; then
+	CURRENT_TAG=$TRAVIS_BRANCH 
+
+	if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+    CURRENT_TAG="latest"
+	fi
+
+	docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+	docker build -t howtohireme/give-me-poc-features:$CURRENT_TAG -f Dockerfile .
+	docker push howtohireme/give-me-poc-features:$CURRENT_TAG
+else
+	echo "Skip build for PR event"
+fi

@@ -8,13 +8,4 @@ services:
   - docker
 
 script:
-  - echo "Done"
-
-deploy:
-  - provider: script
-    script: bash bin/build-image
-    on:
-      branch:
-        - master
-
-
+  - bin/build-image

@@ -57,7 +57,7 @@ services:
       "
 
   features:
-    image: howtohireme/give-me-poc-features
+    image: howtohireme/give-me-poc-features:${CURRENT_TAG}
     container_name: features_1
     depends_on:
         - app
