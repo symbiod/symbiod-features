@@ -14,11 +14,15 @@ Then('I can see {string} state test task on Test tasks page') do |link|
 end
 
 When('I click {string} link on Test tasks page') do |link|
-	@page = @page.public_send("click_#{link}_link".tr(' ', '_').downcase, @test_task.id)
+  @page = @page.public_send("click_#{link}_link".tr(' ', '_').downcase, @test_task.id)
+end
+
+When('I click create test task button') do
+  @page = @page.click_create_test_task_button
 end
 
 And('test task has {string} state') do |state|
-	Watir::Wait.until { @browser.element(:xpath, "//a[contains(@href,\"test_tasks/#{@test_task.id}\")]").visible? }
+  Watir::Wait.until { @browser.element(:xpath, "//a[contains(@href,\"test_tasks/#{@test_task.id}\")]").visible? }
   expect(@test_task.reload.state).to eq state
 end
 
@@ -35,9 +39,9 @@ When('I update title field test task') do
 end
 
 When('I update fields test task') do
-	binding.pry
+  @browser.execute_script("document.getElementById('developer_test_task_description').style = ''")
   @page.test_task_title_input = 'New test task'
-  @page.test_task_description_textarea = 'Faker::VForVendetta.speech'
+  @page.test_task_description_textarea = Faker::VForVendetta.speech
 end
 
 When('I click {string} button on Test task page') do |button_name|
@@ -49,5 +53,6 @@ Then('I can see test task new title') do
 end
 
 Then('I can see new test task') do
+  binding.pry
   expect(@page.has_text?('New test task')).to eq true
 end

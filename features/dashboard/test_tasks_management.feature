@@ -47,5 +47,5 @@ Feature: test tasks management
     When I click 'New Test task' link on Test tasks page
     Then I can see 'Create Test task' button on Test task page
     When I update fields test task
-    #And I click 'Create Test task' button on Test task page
-    #Then I can see new test task
+    And I click 'Create Test task' button on Test task page
+    Then I can see new test task

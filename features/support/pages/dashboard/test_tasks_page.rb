@@ -13,12 +13,12 @@ module Pages
       end
 
       def click_deactivate_test_task_link(id)
-				@browser.element(:xpath, "//a[contains(@href, \"test_tasks/#{id}/deactivate\")]").click
+        @browser.element(:xpath, "//a[contains(@href, \"test_tasks/#{id}/deactivate\")]").click
         Pages::Dashboard::TestTasksPage.new(@browser)
       end
 
       def click_activate_test_task_link(id)
-				@browser.element(:xpath, "//a[contains(@href, \"test_tasks/#{id}/activate\")]").click
+        @browser.element(:xpath, "//a[contains(@href, \"test_tasks/#{id}/activate\")]").click
         Pages::Dashboard::TestTasksPage.new(@browser)
       end
 
@@ -33,7 +33,7 @@ module Pages
       end
 
       def click_new_test_task_link(id)
-				@browser.element(:xpath, '//a[contains(@href, "test_tasks/new")]').click
+        @browser.element(:xpath, '//a[contains(@href, "test_tasks/new")]').click
         Pages::Dashboard::TestTasksPage.new(@browser)
       end
     end
