@@ -3,11 +3,10 @@ module Pages
     class TestTasksPage < BasePage
       include Pages::Dashboard::SidebarNavigation
       text_field :test_task_title_input, id: 'developer_test_task_title'
-      textarea :test_task_description_textarea, id: 'developer_test_task_description'
       button :update_test_task_button, value: 'Update Test task'
       button :create_test_task_button, value: 'Create Test task'
 
-      def open_first_test_task_profile(title)
+      def open_test_task_profile(title)
         @browser.link(text: title).click
         Pages::Dashboard::TestTasksPage.new(@browser)
       end
@@ -32,9 +31,13 @@ module Pages
         Pages::Dashboard::TestTasksPage.new(@browser)
       end
 
-      def click_new_test_task_link(id)
+      def click_new_test_task_link
         @browser.element(:xpath, '//a[contains(@href, "test_tasks/new")]').click
         Pages::Dashboard::TestTasksPage.new(@browser)
+      end
+
+      def test_task_has_status?(title, state)
+        @browser.table(class: 'table').strings.find { |row| row[1] == title }[2] == state
       end
     end
   end
