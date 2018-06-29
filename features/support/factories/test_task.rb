@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :test_task, class: Models::TestTask do
     position { %w[1 2].sample }
-    title { Faker::Dune.title }
+    title { 'Create Title' }
     description { Faker::VForVendetta.speech }
     skill
 
