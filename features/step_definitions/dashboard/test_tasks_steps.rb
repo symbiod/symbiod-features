@@ -43,7 +43,3 @@ end
 When('I click {string} button on Test task page') do |button_name|
   @page = @page.public_send("click_#{button_name}_button".tr(' ', '_').downcase)
 end
-
-Then('I can see new test task') do
-  expect(@page.has_text?('New test task')).to eq true
-end
