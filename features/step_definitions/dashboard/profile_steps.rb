@@ -3,8 +3,8 @@ When('I open profile in dashboard') do
   @page = Pages::Dashboard::ProfilePage.new(@browser)
 end
 
-Then('I can see email on page profile') do
-  expect(@page.has_text?(@user.email)).to eq true
+Then('I can see my email on page profile {string} user') do |role|
+  expect(@page.has_text?(self.instance_variable_get("@#{role}").email)).to eq true
 end
 
 When('I click {string} link on profile') do |link|
@@ -12,6 +12,7 @@ When('I click {string} link on profile') do |link|
 end
 
 Then('I can see {string} button on edit profile') do |button_name|
+  Watir::Wait.until { @browser.button(value: button_name).visible? }
   expect(@page.public_send("#{button_name}_button?".downcase)).to eq true
 end
 

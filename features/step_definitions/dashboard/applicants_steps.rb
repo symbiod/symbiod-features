@@ -1,8 +1,5 @@
-Given('system has applied developer') do
-  @applicant = FactoryBot.create(:user, :screening_completed)
-end
-
-Then('I can see developer in table') do
+Then('I can see {string} in table') do |role|
+  @applicant = self.instance_variable_get("@#{role}")
   @page = @page.goto_applicants
   # TODO: we have some race condition here
   # for some reasons watir can find the required element
