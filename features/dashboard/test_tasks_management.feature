@@ -39,10 +39,11 @@ Feature: test tasks management
     Given system has staff user
     When I sign in as staff
     Then I can access dashboard
+    Given system has created 'active' test task
     When I open test tasks page in dashboard
     When I click New Test task link on Test tasks page
     Then I can see 'Create Test task' button on Test task page
     When I update title with 'New title'
     When I update description
     And I click 'Create Test task' button on Test task page
-    Then I can see new test task
+    Then test task 'New title' has 'active' status
