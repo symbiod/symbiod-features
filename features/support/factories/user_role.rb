@@ -7,5 +7,9 @@ FactoryBot.define do
     trait :staff do
       role { create(:role, :staff) }
     end
+
+    trait :developer do
+      role { create(:role, :developer) }
+    end
   end
 end

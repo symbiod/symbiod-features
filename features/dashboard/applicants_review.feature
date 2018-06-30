@@ -2,9 +2,10 @@ Feature: staff can review developer applications
 
   Scenario: approves applicant
     Given system has applied developer
-    Given system has staff user
-    When I sign in as staff
-    Then I can access dashboard
+    Given system has 'staff' user
+    When I sign in
+    When I open dashboard page
+    Then I can access to all dashboard
     Then I can see developer in table
     When I open developer profile
     Then I can see 'activate' button
@@ -14,9 +15,10 @@ Feature: staff can review developer applications
 
   Scenario: rejects applicant
     Given system has applied developer
-    Given system has staff user
-    When I sign in as staff
-    Then I can access dashboard
+    Given system has 'staff' user
+    When I sign in
+    When I open dashboard page
+    Then I can access to all dashboard
     Then I can see developer in table
     When I open developer profile
     Then I can see 'reject' button

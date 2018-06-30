@@ -48,6 +48,11 @@ module Routes
           path: '/test_tasks',
           subdomain: 'dashboard',
           page_class: Pages::Dashboard::TestTasksPage
+        },
+        dashboard_profile: {
+          path: '/profile',
+          subdomain: 'dashboard',
+          page_class: Pages::Dashboard::ProfilePage
         }
       }
     end
