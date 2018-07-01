@@ -1,9 +1,9 @@
 Feature: test tasks management
 
   Scenario: deactivate test task
-    Given system has staff user
-    When I sign in as staff
-    Then I can access dashboard
+    Given system has an 'active' 'staff' user
+    When I sign in as 'staff'
+    When I open dashboard page
     Given system has created 'active' test task
     When I open test tasks page in dashboard
     Then test task 'Create Title' has 'active' status
@@ -12,9 +12,9 @@ Feature: test tasks management
     Then test task 'Create Title' has 'disabled' status
 
   Scenario: activate test task
-    Given system has staff user
-    When I sign in as staff
-    Then I can access dashboard
+    Given system has an 'active' 'staff' user
+    When I sign in as 'staff'
+    When I open dashboard page
     Given system has created 'disabled' test task
     When I open test tasks page in dashboard
     Then test task 'Create Title' has 'disabled' status
@@ -23,9 +23,9 @@ Feature: test tasks management
     Then test task 'Create Title' has 'active' status
 
   Scenario: update test task
-    Given system has staff user
-    When I sign in as staff
-    Then I can access dashboard
+    Given system has an 'active' 'staff' user
+    When I sign in as 'staff'
+    When I open dashboard page
     Given system has created 'active' test task
     When I open test tasks page in dashboard
     Then test task 'Create Title' has 'active' status
@@ -36,9 +36,9 @@ Feature: test tasks management
     Then test task 'New title' has 'active' status
 
   Scenario: create test task
-    Given system has staff user
-    When I sign in as staff
-    Then I can access dashboard
+    Given system has an 'active' 'staff' user
+    When I sign in as 'staff'
+    When I open dashboard page
     Given system has created 'active' test task
     When I open test tasks page in dashboard
     When I click New Test task link on Test tasks page

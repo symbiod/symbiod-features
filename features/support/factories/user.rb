@@ -11,6 +11,10 @@ FactoryBot.define do
     crypted_password '$2a$10$LFq3avQu0j3DLEn2DokWQendnri2DOUbBSz/yO42YQGScVjMBD0A2'
     salt 'Gjss7xddU4PZ71-2S_p1'
 
+    after(:create) do |u|
+      FactoryBot.create(:user_skill, skill: FactoryBot.create(:skill), user: u)
+    end
+
     trait :screening_completed do
       state 'screening_completed'
 
@@ -28,6 +32,16 @@ FactoryBot.define do
       after(:create) do |u|
         FactoryBot.create(:user_role, :staff, user: u)
       end
+    end
+
+    trait :developer do
+      after(:create) do |u|
+        FactoryBot.create(:user_role, :developer, user: u)
+      end
+    end
+
+    trait :active do
+      state 'active'
     end
   end
 end
