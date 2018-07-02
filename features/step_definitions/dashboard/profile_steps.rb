@@ -12,7 +12,8 @@ When('I click {string} link on profile') do |link|
 end
 
 Then('I can see {string} button on edit profile') do |button_name|
-  Watir::Wait.until { @browser.button(value: button_name).visible? }
+  # TODO: delete, if success
+  # Watir::Wait.until { @browser.button(value: button_name).visible? }
   expect(@page.public_send("#{button_name}_button?".downcase)).to eq true
 end
 
