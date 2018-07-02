@@ -3,16 +3,14 @@ module Pages
     class ProfilePage < BasePage
       include Pages::Dashboard::SidebarNavigation
 
+      button :update_button, value: 'Update'
+
       def click_edit_link
         @browser.link(text: 'Edit').click
         Pages::Dashboard::ProfilePage.new(@browser)
       end
 
-      def update_button?
-        @browser.button(text: 'Update').exist?
-      end
-
-      def profile_location_input(value)
+     def profile_location_input(value)
         @browser.input(id: 'user_location').to_subtype.set(value)
       end
 
@@ -21,7 +19,7 @@ module Pages
       end
 
       def click_update_button
-        @browser.button(text: 'Update').click
+        update_button
         Pages::Dashboard::ProfilePage.new(@browser)
       end
     end
