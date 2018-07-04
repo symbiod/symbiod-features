@@ -1,0 +1,32 @@
+#!/bin/bash
+
+git clone https://github.com/howtohireme/give-me-poc.git
+cd give-me-poc
+
+# Checkout corresponding app branch, if it exists
+if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+  echo "Using master branch of app"
+  echo "Current branch is master, using 'latest' tag"
+  CURRENT_TAG="latest"
+else
+  CURRENT_TAG=$TRAVIS_BRANCH 
+  if [ `git branch --list -r origin/$TRAVIS_BRANCH` ]; then
+    echo "Using $TRAVIS_BRANCH branch of features"
+    echo "Travis branch is $TRAVIS_BRANCH, using '$TRAVIS_BRANCH' tag"
+    git checkout $TRAVIS_BRANCH
+  else
+    echo "There is no app branch for $TRAVIS_BRANCH, using master"
+    echo "Current branch is master, using '$TRAVIS_BRANCH' tag for features"
+  fi
+fi
+
+# We don't want to run features for PR builds
+if [[ "$TRAVIS_EVENT_TYPE" == "push" ]]; then
+  rm -rf ./vendor/bundle
+  docker build --build-arg master_key=$RAILS_MASTER_KEY -t registry.heroku.com/peaceful-refuge-95132/web -f Dockerfile .
+  export CURRENT_TAG
+  cd ..
+  bin/run
+else
+	echo "Skip build for PR event"
+fi

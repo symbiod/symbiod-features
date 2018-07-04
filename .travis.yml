@@ -9,3 +9,4 @@ services:
 
 script:
   - bin/build-image
+  - bin/build-app-image
