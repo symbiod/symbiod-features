@@ -20,10 +20,6 @@ When('I click New Test task link on Test tasks page') do
   @page = @page.click_new_test_task_link
 end
 
-When('I click create test task button') do
-  @page = @page.click_create_test_task_button
-end
-
 When('I open {string} test task profile') do |title|
   @page = @page.open_test_task_profile(title)
 end

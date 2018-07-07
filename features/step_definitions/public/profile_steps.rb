@@ -13,5 +13,5 @@ When('I accept the policy') do
 end
 
 Given('system has skills') do
-  FactoryBot.create(:skill)
+  FactoryBot.create(:skill, :active)
 end

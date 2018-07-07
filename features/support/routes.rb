@@ -49,6 +49,11 @@ module Routes
           subdomain: 'dashboard',
           page_class: Pages::Dashboard::TestTasksPage
         },
+        dashboard_skills: {
+          path: '/skills',
+          subdomain: 'dashboard',
+          page_class: Pages::Dashboard::SkillsPage
+        },
         dashboard_profile: {
           path: '/profile',
           subdomain: 'dashboard',
