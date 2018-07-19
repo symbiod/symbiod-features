@@ -6,6 +6,7 @@ Feature: staff can review developer applications
     When I sign in as 'staff'
     When I open dashboard page
     Then I can access all pages at dashboard
+    When I open applicants page in dashboard
     Then I can see 'developer' in table
     When I open developer profile
     Then I can see 'activate' button
@@ -18,6 +19,7 @@ Feature: staff can review developer applications
     Given system has an 'active' 'staff' user
     When I sign in as 'staff'
     When I open dashboard page
+    When I open applicants page in dashboard
     Then I can see 'developer' in table
     When I open developer profile
     Then I can see 'reject' button

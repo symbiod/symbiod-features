@@ -21,6 +21,10 @@ module Pages
         reject_button
         Pages::Dashboard::ApplicantsPage.new(@browser)
       end
+
+      def applicant_in_table?(email)
+        @browser.table(class: 'table').strings.find { |row| row[1] == email }.present?
+      end
     end
   end
 end

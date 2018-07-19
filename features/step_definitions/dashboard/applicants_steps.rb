@@ -1,11 +1,10 @@
+When('I open applicants page in dashboard') do
+  @page = @page.goto_applicants
+end
+
 Then('I can see {string} in table') do |role|
   @applicant = self.instance_variable_get("@#{role}")
-  @page = @page.goto_applicants
-  # TODO: we have some race condition here
-  # for some reasons watir can find the required element
-  puts @page.has_text?(@applicant.email)
-  #Watir::Wait.until { @browser.td(value: @applicant.email).visible? }
-  expect(@page.has_text?(@applicant.email)).to eq true
+  expect(@page.applicant_in_table?(@applicant.email)).to eq true
 end
 
 When('I open developer profile') do
@@ -25,7 +24,7 @@ When('I click {string} button') do |button_name|
 end
 
 Then('I see no applied user') do
-  expect(@page.has_text?(@applicant.email)).to eq false
+  expect(@page.applicant_in_table?(@applicant.email)).to eq false
 end
 
 And('user has {string} state') do |state|
