@@ -6,8 +6,7 @@ module Pages
       button :signin_button, value: 'Sign in'
 
       button :authorize_oauth_button, id: 'js-oauth-authorize-btn'
-      link :deauthorize_app_button, text: 'Revoke'
-      button :confirm_deauthorize_app_button, xpath: '//*[@id="facebox"]/div/div/div/form/button'
+      button :confirm_deauthorize_app_button, text: 'I understand, revoke access'
 
       def click_signin_button
         signin_button
@@ -20,7 +19,7 @@ module Pages
       end
 
       def deauthorize_app
-        deauthorize_app_button
+        @browser.summary(text: 'Revoke', class: 'btn btn-sm btn-danger').click
         Pages::Public::GithubPage.new(@browser)
       end
 
