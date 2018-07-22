@@ -2,18 +2,19 @@
 
 FactoryBot.define do
   factory :role, class: Models::Role do
-    name 'developer'
+    user
+    type 'Roles::Developer'
 
     trait :staff do
-      name 'staff'
+      type 'Roles::Staff'
     end
 
     trait :developer do
-      name 'developer'
+      type 'Roles::Developer'
     end
 
     trait :mentor do
-      name 'mentor'
+      type 'Roles::Mentor'
     end
   end
 end

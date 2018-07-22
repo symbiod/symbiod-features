@@ -1,6 +1,6 @@
 Given('I have staff role') do
   @current_user = Models::User.find_by(email: ENV['GITHUB_TEST_EMAIL'])
-  FactoryBot.create(:user_role, :staff, user: @current_user)
+  FactoryBot.create(:role, :staff, user: @current_user)
 end
 
 When('I open dashboard page') do

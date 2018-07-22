@@ -1,6 +1,5 @@
 module Models
   class Role < ActiveRecord::Base
-    self.table_name = 'legacy_roles'
-    has_many :user_roles
+    belongs_to :user
   end
 end
