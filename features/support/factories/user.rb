@@ -30,13 +30,13 @@ FactoryBot.define do
 
     trait :staff do
       after(:create) do |u|
-        FactoryBot.create(:user_role, :staff, user: u)
+        FactoryBot.create(:role, :staff, user: u)
       end
     end
 
     trait :developer do
       after(:create) do |u|
-        FactoryBot.create(:user_role, :developer, user: u)
+        FactoryBot.create(:role, :developer, user: u)
       end
     end
 
