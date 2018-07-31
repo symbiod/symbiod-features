@@ -3,7 +3,7 @@ module Pages
     module SidebarNavigation
       include PageObject
 
-      link :applicants_link, text: 'Applicants'
+      link :applicants_link, text: /Applicants/
       link :test_tasks_link, text: 'Test Tasks'
 
       def goto_applicants
