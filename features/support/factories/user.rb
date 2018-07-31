@@ -16,9 +16,9 @@ FactoryBot.define do
     end
 
     trait :screening_completed do
-      state 'screening_completed'
-
       after(:create) do |u|
+        u.roles.first.update(state: 'screening_completed')
+
         result = FactoryBot.create(:test_task_result)
         FactoryBot.create(:test_task_assignment,
                           test_task_id: FactoryBot.create(:test_task).id,
@@ -41,7 +41,9 @@ FactoryBot.define do
     end
 
     trait :active do
-      state 'active'
+      after(:create) do |u|
+        u.roles.first.update(state: 'active')
+      end
     end
   end
 end

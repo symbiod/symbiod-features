@@ -15,7 +15,7 @@ module Pages
 
       def authorize_oauth
         authorize_oauth_button
-        Pages::Public::PolicyPage.new(@browser)
+        Pages::Public::ProfilePage.new(@browser)
       end
 
       def deauthorize_app

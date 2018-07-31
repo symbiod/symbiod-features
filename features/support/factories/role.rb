@@ -3,7 +3,6 @@
 FactoryBot.define do
   factory :role, class: Models::Role do
     user
-    type 'Roles::Developer'
 
     trait :staff do
       type 'Roles::Staff'
