@@ -16,7 +16,7 @@ module Pages
         end
         submit_profile
 
-        @page = Pages::Public::ScreeningPage.new(@browser)
+        @page = Pages::Public::PolicyPage.new(@browser)
       end
     end
   end

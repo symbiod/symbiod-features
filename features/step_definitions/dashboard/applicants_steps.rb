@@ -28,5 +28,6 @@ Then('I see no applied user') do
 end
 
 And('user has {string} state') do |state|
-  expect(@applicant.reload.state).to eq state
+  # TODO: do not rely on role here, and check the state via UI
+  expect(@applicant.roles.last.reload.state).to eq state
 end

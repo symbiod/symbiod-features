@@ -7,7 +7,7 @@ module Pages
       def submit_accepted_policy
         check_accept_policy
         submit_policy_agreement
-        Pages::Public::ProfilePage.new(@browser)
+        Pages::Public::ScreeningPage.new(@browser)
       end
     end
   end
