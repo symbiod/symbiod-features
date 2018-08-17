@@ -32,6 +32,8 @@ services:
       - GITHUB_CALLBACK_DOMAIN=http://bootcamp.app.com:3000
       - DATABASE_HOST=postgres
       - REDIS_URL=redis://redis:6379
+      - RECAPTCHA_SITE_KEY
+      - RECAPTCHA_SECRET_KEY
     depends_on:
       - postgres
       - redis
