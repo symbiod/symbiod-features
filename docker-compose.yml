@@ -30,7 +30,7 @@ services:
       - "GITHUB_CLIENT_ID=${FEATURES_GITHUB_CLIENT_ID}"
       - "GITHUB_SECRET=${FEATURES_GITHUB_SECRET}"
       - GITHUB_CALLBACK_DOMAIN=http://bootcamp.app.com:3000
-      - PGHOST=postgres
+      - DATABASE_HOST=postgres
       - REDIS_URL=redis://redis:6379
       - RECAPTCHA_SITE_KEY
       - RECAPTCHA_SECRET_KEY
@@ -65,7 +65,7 @@ services:
         - app
     environment:
       - CUCUMBER_HOST=http://www.app.com:3000
-      - PGHOST=postgres
+      - POSTGRES_HOST=postgres
       - GITHUB_TEST_EMAIL
       - GITHUB_TEST_PASSWORD
       - GITHUB_NON_PUBLIC_EMAIL
