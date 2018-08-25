@@ -23,7 +23,7 @@ FactoryBot.define do
         FactoryBot.create(:test_task_assignment,
                           test_task_id: FactoryBot.create(:test_task).id,
                           test_task_result_id: result.id,
-                          developer_id: u.id
+                          member_id: u.id
                          )
       end
     end
@@ -34,9 +34,9 @@ FactoryBot.define do
       end
     end
 
-    trait :developer do
+    trait :member do
       after(:create) do |u|
-        FactoryBot.create(:role, :developer, user: u)
+        FactoryBot.create(:role, :member, user: u)
       end
     end
 

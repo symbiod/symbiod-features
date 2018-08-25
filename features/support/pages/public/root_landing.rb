@@ -6,10 +6,10 @@ module Pages
     class RootLanding < BasePage
       include Public::HeaderNavigation
 
-      link :developer_button, id: 'join-bootcamp'
+      link :member_button, id: 'join-bootcamp'
 
-      def click_developer_button
-        developer_button
+      def click_member_button
+        member_button
         BootcampLanding.new(@browser)
       end
     end

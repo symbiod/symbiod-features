@@ -2,7 +2,7 @@ module Pages
   module Dashboard
     class TestTasksPage < BasePage
       include Pages::Dashboard::SidebarNavigation
-      text_field :test_task_title_input, id: 'developer_test_task_title'
+      text_field :test_task_title_input, id: 'member_test_task_title'
       button :update_test_task_button, value: 'Update Test task'
       button :create_test_task_button, value: 'Create Test task'
 

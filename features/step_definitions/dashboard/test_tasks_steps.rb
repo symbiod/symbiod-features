@@ -1,5 +1,5 @@
 Given('system has created {string} test task') do |state|
-  @test_task = FactoryBot.create(:test_task, state.to_s.to_sym, :developer)
+  @test_task = FactoryBot.create(:test_task, state.to_s.to_sym, :member)
   @role = FactoryBot.create(:role)
 end
 

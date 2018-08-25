@@ -1,5 +1,5 @@
 Given('system has test tasks') do
-  FactoryBot.create(:test_task, :developer, :active, skill: Models::Skill.first)
+  FactoryBot.create(:test_task, :member, :active, skill: Models::Skill.first)
 end
 
 When('I submit screening form with {string}') do |solution_url|
