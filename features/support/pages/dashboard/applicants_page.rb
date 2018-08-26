@@ -3,12 +3,12 @@ module Pages
     class ApplicantsPage < BasePage
       include Pages::Dashboard::SidebarNavigation
 
-      link :applied_developer_link, xpath: '/html/body/div/div/main/div/table/tbody/tr/td[2]/a'
+      link :applied_member_link, xpath: '/html/body/div/div/main/div/table/tbody/tr/td[2]/a'
       button :activate_button, value: 'Activate'
       button :reject_button, value: 'Reject'
 
-      def open_first_applied_developer_profile
-        applied_developer_link
+      def open_first_applied_member_profile
+        applied_member_link
         Pages::Dashboard::ApplicantsPage.new(@browser)
       end
 

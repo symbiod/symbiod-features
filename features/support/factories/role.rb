@@ -8,8 +8,8 @@ FactoryBot.define do
       type 'Roles::Staff'
     end
 
-    trait :developer do
-      type 'Roles::Developer'
+    trait :member do
+      type 'Roles::Member'
     end
 
     trait :mentor do

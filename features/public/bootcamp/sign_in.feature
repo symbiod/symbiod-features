@@ -1,4 +1,4 @@
-Feature: developer sign up
+Feature: member sign up
   Checks if the oauth process works correctly
   Also involves completing of screening
 
@@ -10,7 +10,7 @@ Feature: developer sign up
     When click on 'join' button
     When sign in to github as 'public-email'
     And authorized through github
-    Then page has 'Fill your developer profile' text
+    Then page has 'Fill your member profile' text
     Then I submit filled profile
     When I accept the policy
     Then page has 'Prove your skills' text
@@ -23,7 +23,7 @@ Feature: developer sign up
     When click on 'join' button
     When sign in to github as 'non-public-email'
     And authorized through github
-    Then page has 'Upgrade your developer skills' text
+    Then page has 'Upgrade your member skills' text
     Then page has 'Please fill your github profile according to our guidelines' text
     Then deauthorize github app
 

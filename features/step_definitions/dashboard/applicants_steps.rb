@@ -7,8 +7,8 @@ Then('I can see {string} in table') do |role|
   expect(@page.applicant_in_table?(@applicant.email)).to eq true
 end
 
-When('I open developer profile') do
-  @page = @page.open_first_applied_developer_profile
+When('I open member profile') do
+  @page = @page.open_first_applied_member_profile
 end
 
 Then('I can see {string} button') do |button_name|

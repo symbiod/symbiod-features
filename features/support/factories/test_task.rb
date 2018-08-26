@@ -15,8 +15,8 @@ FactoryBot.define do
       state 'disabled'
     end
 
-    trait :developer do
-      role_name 'developer'
+    trait :member do
+      role_name 'member'
     end
   end
 end
