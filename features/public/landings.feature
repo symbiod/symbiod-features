@@ -8,11 +8,11 @@ Feature: landings landing
     And page has 'member' button
 
     When click on 'member' button
-    Then page has 'Upgrade your member skills' text
+    Then page has 'Receive a new expertise' text
     And page has 'join' button
 
     When click on 'home' link
     Then page has 'The great oppurtunities' text
 
     When click on 'bootcamp' link
-    Then page has 'Upgrade your member skills' text
+    Then page has 'Receive a new expertise' text
