@@ -23,7 +23,7 @@ Feature: member sign up
     When click on 'join' button
     When sign in to github as 'non-public-email'
     And authorized through github
-    Then page has 'Upgrade your member skills' text
+    Then page has 'Receive a new expertise' text
     Then page has 'Please fill your github profile according to our guidelines' text
     Then deauthorize github app
 
