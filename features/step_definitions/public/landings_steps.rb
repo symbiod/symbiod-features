@@ -9,7 +9,7 @@ Then('page has {string} text') do |string|
 end
 
 Then('page has {string} button') do |string|
-  expect(@page.public_send("#{string}_button?")).to eq true
+  expect(@page.public_send("#{underscore(string)}_button?")).to eq true
 end
 
 When('click on {string} button') do |button_name|
@@ -26,4 +26,8 @@ end
 
 def full_landing_name(name)
   "#{name}_landing"
+end
+
+def underscore(string)
+  string.underscore.gsub(' ', '_')
 end
