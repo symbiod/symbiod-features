@@ -7,6 +7,12 @@ module Pages
       include Public::HeaderNavigation
 
       link :member_button, id: 'join-bootcamp'
+      link :organization_button, id: 'offer-idea'
+
+      def click_organization_button
+        organization_button
+        IdeaLanding.new(@browser)
+      end
 
       def click_member_button
         member_button
