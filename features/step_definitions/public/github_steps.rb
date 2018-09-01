@@ -1,7 +1,7 @@
 When('sign in to github as {string}') do |account_kind|
   email, password = github_credentials_for(account_kind)
-  @page.email_input = email
-  @page.password_input = password
+  @page.login = email
+  @page.password = password
   @page = @page.click_signin_button
 end
 

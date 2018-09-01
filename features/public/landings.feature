@@ -25,12 +25,12 @@ Feature: landings landing
     And page has 'organization' button
 
     When click on 'organization' button
-    Then page has 'Have an idea of non-profitable project?' text
+    Then page has 'Have an awesome project idea?' text
     And page has 'Offer an idea' button
 
     When click on 'home' link
     Then page has 'A symbiosis of specialists and non-profits' text
 
     When click on 'organizations' link
-    Then page has 'Have an idea of non-profitable project?' text
+    Then page has 'Have an awesome project idea?' text
 

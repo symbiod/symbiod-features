@@ -5,15 +5,15 @@ FactoryBot.define do
     title { Faker::Dune.title }
 
     trait :create_title do
-      title 'Create Title'
+      title { 'Create Title' }
     end
 
     trait :active do
-      state 'active'
+      state { 'active' }
     end
 
     trait :disabled do
-      state 'disabled'
+      state { 'disabled' }
     end
   end
 end
