@@ -8,15 +8,15 @@ FactoryBot.define do
     skill
 
     trait :active do
-      state 'active'
+      state { 'active' }
     end
 
     trait :disabled do
-      state 'disabled'
+      state { 'disabled' }
     end
 
     trait :member do
-      role_name 'member'
+      role_name { 'member' }
     end
   end
 end

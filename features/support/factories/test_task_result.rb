@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :test_task_result, class: Models::TestTaskResult do
-    link 'some answer'
+    link { 'some answer' }
   end
 end

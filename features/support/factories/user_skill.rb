@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :user_skill, class: Models::UserSkill do
     user
     skill
-    primary true
+    primary { true }
   end
 end

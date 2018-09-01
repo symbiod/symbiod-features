@@ -1,8 +1,8 @@
 module Pages
   module Public
     class GithubPage < BasePage
-      text_field :email_input, id: 'login_field'
-      text_field :password_input, id: 'password'
+      text_field :login, id: 'login_field'
+      text_field :password, id: 'password'
       button :signin_button, value: 'Sign in'
 
       button :authorize_oauth_button, id: 'js-oauth-authorize-btn'

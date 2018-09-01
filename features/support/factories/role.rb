@@ -5,15 +5,15 @@ FactoryBot.define do
     user
 
     trait :staff do
-      type 'Roles::Staff'
+      type { 'Roles::Staff' }
     end
 
     trait :member do
-      type 'Roles::Member'
+      type { 'Roles::Member' }
     end
 
     trait :mentor do
-      type 'Roles::Mentor'
+      type { 'Roles::Mentor' }
     end
   end
 end
