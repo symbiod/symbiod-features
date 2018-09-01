@@ -4,7 +4,7 @@ Feature: landings landing
     From root landing to bootcamp landing
 
     Given I am on root landing page
-    Then page has 'The great oppurtunities' text
+    Then page has 'A symbiosis of specialists and non-profits' text
     And page has 'member' button
 
     When click on 'member' button
@@ -12,7 +12,7 @@ Feature: landings landing
     And page has 'join' button
 
     When click on 'home' link
-    Then page has 'The great oppurtunities' text
+    Then page has 'A symbiosis of specialists and non-profits' text
 
     When click on 'bootcamp' link
     Then page has 'Receive a new expertise' text
