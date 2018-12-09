@@ -25,38 +25,38 @@ module Routes
           page_class: Pages::Public::RootLanding
         },
         bootcamp_landing: {
-          path: '/',
-          subdomain: 'bootcamp',
+          path: '/bootcamp',
+          subdomain: 'www',
           page_class: Pages::Public::BootcampLanding
         },
         dashboard_root: {
-          path: '/',
-          subdomain: 'dashboard',
+          path: '/dashboard',
+          subdomain: 'www',
           page_class: Pages::Dashboard::RootPage
         },
         dashboard_applicants: {
-          path: '/test_task_assignments',
-          subdomain: 'dashboard',
+          path: '/dashboard/test_task_assignments',
+          subdomain: 'www',
           page_class: Pages::Dashboard::ApplicantsPage
         },
         idea_sign_in: {
-          path: '/sessions/new',
-          subdomain: 'idea',
+          path: '/idea/sessions/new',
+          subdomain: 'www',
           page_class: Pages::Idea::SignInPage
         },
         dashboard_test_tasks: {
-          path: '/test_tasks',
-          subdomain: 'dashboard',
+          path: '/dashboard/test_tasks',
+          subdomain: 'www',
           page_class: Pages::Dashboard::TestTasksPage
         },
         dashboard_skills: {
-          path: '/skills',
-          subdomain: 'dashboard',
+          path: '/dashboard/skills',
+          subdomain: 'www',
           page_class: Pages::Dashboard::SkillsPage
         },
         dashboard_profile: {
-          path: '/profile',
-          subdomain: 'dashboard',
+          path: '/dashboard/profile',
+          subdomain: 'www',
           page_class: Pages::Dashboard::ProfilePage
         }
       }
