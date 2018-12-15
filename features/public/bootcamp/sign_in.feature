@@ -16,7 +16,7 @@ Feature: member sign up
     Then page has 'Prove your skills' text
     When I submit screening form with 'http://cspub.net'
     Then page has 'Congratulations' text
-    Then deauthorize github app
+    Then deauthorize github app as 'public-email'
 
   Scenario: user signs up with unpublished email
     Given I am on bootcamp landing page
@@ -25,5 +25,5 @@ Feature: member sign up
     And authorized through github
     Then page has 'Receive a new expertise' text
     Then page has 'Please fill your github profile according to our guidelines' text
-    Then deauthorize github app
+    Then deauthorize github app as 'non-public-email'
 
