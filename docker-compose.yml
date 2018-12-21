@@ -56,7 +56,7 @@ services:
       "
 
   features:
-    image: howtohireme/give-me-poc-features:${CURRENT_TAG}
+    image: symbiod/symbiod-features:${CURRENT_TAG}
     container_name: features_1
     depends_on:
         - app

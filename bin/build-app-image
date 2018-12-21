@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git clone https://github.com/howtohireme/give-me-poc.git
-cd give-me-poc
+git clone https://github.com/symbiod/symbiod.git
+cd symbiod
 
 # Checkout corresponding app branch, if it exists
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
