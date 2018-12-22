@@ -8,8 +8,8 @@ if [[ "$TRAVIS_EVENT_TYPE" == "push" ]]; then
 	fi
 
 	docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-	docker build -t howtohireme/give-me-poc-features:$CURRENT_TAG -f Dockerfile .
-	docker push howtohireme/give-me-poc-features:$CURRENT_TAG
+	docker build -t symbiod/symbiod-features:$CURRENT_TAG -f Dockerfile .
+	docker push symbiod/symbiod-features:$CURRENT_TAG
 else
 	echo "Skip build for PR event"
 fi
