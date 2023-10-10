@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '~> 2.5.0'
+ruby '~> 3.0.0'
 
 gem 'activerecord'
 gem 'cucumber'
@@ -19,6 +19,6 @@ gem 'page-object'
 gem 'data_magic'
 gem 'factory_bot'
 gem 'faker'
-gem 'pg'
+# gem 'pg'
 gem 'pry'
 gem 'rspec'
